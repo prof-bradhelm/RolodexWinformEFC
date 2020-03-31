@@ -49,7 +49,7 @@ namespace RolodexWinformEFC.Models
 
             lvi.Text = ToString();
             lvi.Tag = RolodexEntryId;
-
+            lvi.SubItems.Add(BirthDate.ToString());
             return lvi;
         }
 

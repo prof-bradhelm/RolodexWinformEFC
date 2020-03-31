@@ -70,12 +70,17 @@
             this.pasteToolStripButton = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator7 = new System.Windows.Forms.ToolStripSeparator();
             this.helpToolStripButton = new System.Windows.Forms.ToolStripButton();
-            this.listView1 = new System.Windows.Forms.ListView();
             this.toolStripSeparator8 = new System.Windows.Forms.ToolStripSeparator();
             this.toolStripLabel1 = new System.Windows.Forms.ToolStripLabel();
             this.toolStripLabel2 = new System.Windows.Forms.ToolStripLabel();
             this.toolStripLabel3 = new System.Windows.Forms.ToolStripLabel();
             this.toolStripLabel4 = new System.Windows.Forms.ToolStripLabel();
+            this.listView1 = new System.Windows.Forms.ListView();
+            this.viewToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.largeIconToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.samllIconToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.listToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.detailsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.toolStrip1.SuspendLayout();
             this.SuspendLayout();
@@ -86,7 +91,8 @@
             this.fileToolStripMenuItem,
             this.editToolStripMenuItem,
             this.toolsToolStripMenuItem,
-            this.helpToolStripMenuItem});
+            this.helpToolStripMenuItem,
+            this.viewToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Size = new System.Drawing.Size(578, 24);
@@ -421,16 +427,6 @@
             this.helpToolStripButton.Size = new System.Drawing.Size(23, 22);
             this.helpToolStripButton.Text = "He&lp";
             // 
-            // listView1
-            // 
-            this.listView1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.listView1.HideSelection = false;
-            this.listView1.Location = new System.Drawing.Point(0, 49);
-            this.listView1.Name = "listView1";
-            this.listView1.Size = new System.Drawing.Size(578, 460);
-            this.listView1.TabIndex = 2;
-            this.listView1.UseCompatibleStateImageBehavior = false;
-            // 
             // toolStripSeparator8
             // 
             this.toolStripSeparator8.Name = "toolStripSeparator8";
@@ -456,6 +452,7 @@
             this.toolStripLabel3.Size = new System.Drawing.Size(40, 22);
             this.toolStripLabel3.Text = "Delete";
             this.toolStripLabel3.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.toolStripLabel3.Click += new System.EventHandler(this.toolStripLabel3_Click);
             // 
             // toolStripLabel4
             // 
@@ -463,6 +460,56 @@
             this.toolStripLabel4.Size = new System.Drawing.Size(43, 22);
             this.toolStripLabel4.Text = "Reload";
             this.toolStripLabel4.Click += new System.EventHandler(this.toolStripLabel4_Click);
+            // 
+            // listView1
+            // 
+            this.listView1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.listView1.FullRowSelect = true;
+            this.listView1.HideSelection = false;
+            this.listView1.Location = new System.Drawing.Point(0, 49);
+            this.listView1.Name = "listView1";
+            this.listView1.Size = new System.Drawing.Size(578, 460);
+            this.listView1.TabIndex = 2;
+            this.listView1.UseCompatibleStateImageBehavior = false;
+            // 
+            // viewToolStripMenuItem
+            // 
+            this.viewToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.largeIconToolStripMenuItem,
+            this.samllIconToolStripMenuItem,
+            this.listToolStripMenuItem,
+            this.detailsToolStripMenuItem});
+            this.viewToolStripMenuItem.Name = "viewToolStripMenuItem";
+            this.viewToolStripMenuItem.Size = new System.Drawing.Size(44, 20);
+            this.viewToolStripMenuItem.Text = "View";
+            // 
+            // largeIconToolStripMenuItem
+            // 
+            this.largeIconToolStripMenuItem.Name = "largeIconToolStripMenuItem";
+            this.largeIconToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.largeIconToolStripMenuItem.Text = "Large Icon";
+            this.largeIconToolStripMenuItem.Click += new System.EventHandler(this.largeIconToolStripMenuItem_Click);
+            // 
+            // samllIconToolStripMenuItem
+            // 
+            this.samllIconToolStripMenuItem.Name = "samllIconToolStripMenuItem";
+            this.samllIconToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.samllIconToolStripMenuItem.Text = "Small Icon";
+            this.samllIconToolStripMenuItem.Click += new System.EventHandler(this.samllIconToolStripMenuItem_Click);
+            // 
+            // listToolStripMenuItem
+            // 
+            this.listToolStripMenuItem.Name = "listToolStripMenuItem";
+            this.listToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.listToolStripMenuItem.Text = "List";
+            this.listToolStripMenuItem.Click += new System.EventHandler(this.listToolStripMenuItem_Click);
+            // 
+            // detailsToolStripMenuItem
+            // 
+            this.detailsToolStripMenuItem.Name = "detailsToolStripMenuItem";
+            this.detailsToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.detailsToolStripMenuItem.Text = "Details";
+            this.detailsToolStripMenuItem.Click += new System.EventHandler(this.detailsToolStripMenuItem_Click);
             // 
             // Form1
             // 
@@ -534,6 +581,11 @@
         private System.Windows.Forms.ToolStripLabel toolStripLabel2;
         private System.Windows.Forms.ToolStripLabel toolStripLabel3;
         private System.Windows.Forms.ToolStripLabel toolStripLabel4;
+        private System.Windows.Forms.ToolStripMenuItem viewToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem largeIconToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem samllIconToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem listToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem detailsToolStripMenuItem;
     }
 }
 

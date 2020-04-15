@@ -2,44 +2,30 @@
 using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using RolodexWinformEFC.Models;
 
 namespace RolodexWinformEFC.Migrations
 {
     [DbContext(typeof(RolodexContext))]
-    partial class RolodexContextModelSnapshot : ModelSnapshot
+    [Migration("20200414162251_covid")]
+    partial class covid
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
                 .HasAnnotation("ProductVersion", "3.1.3");
-
-            modelBuilder.Entity("RolodexWinformEFC.Models.RolodexContact", b =>
-                {
-                    b.Property<int>("RolodexContactId")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("INTEGER");
-
-                    b.Property<string>("HowToContact")
-                        .HasColumnType("TEXT");
-
-                    b.Property<int?>("OwnerRolodexEntryId")
-                        .HasColumnType("INTEGER");
-
-                    b.HasKey("RolodexContactId");
-
-                    b.HasIndex("OwnerRolodexEntryId");
-
-                    b.ToTable("Contacts");
-                });
 
             modelBuilder.Entity("RolodexWinformEFC.Models.RolodexEntry", b =>
                 {
                     b.Property<int>("RolodexEntryId")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("INTEGER");
+
+                    b.Property<DateTime?>("AdmitDate")
+                        .HasColumnType("TEXT");
 
                     b.Property<DateTime?>("BirthDate")
                         .HasColumnType("TEXT");
@@ -50,16 +36,15 @@ namespace RolodexWinformEFC.Migrations
                     b.Property<string>("LastName")
                         .HasColumnType("TEXT");
 
+                    b.Property<int>("MRN")
+                        .HasColumnType("INTEGER");
+
+                    b.Property<string>("SSN")
+                        .HasColumnType("TEXT");
+
                     b.HasKey("RolodexEntryId");
 
                     b.ToTable("Rolodex");
-                });
-
-            modelBuilder.Entity("RolodexWinformEFC.Models.RolodexContact", b =>
-                {
-                    b.HasOne("RolodexWinformEFC.Models.RolodexEntry", "Owner")
-                        .WithMany("ContactInfo")
-                        .HasForeignKey("OwnerRolodexEntryId");
                 });
 #pragma warning restore 612, 618
         }

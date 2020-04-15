@@ -12,6 +12,7 @@ namespace RolodexWinformEFC.Models
     public class RolodexContext : DbContext
     {
         public DbSet<RolodexEntry> Rolodex { get; set; }
+        public DbSet<RolodexContact> Contacts { get; set; }
 
         // configuring the connection
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
@@ -27,6 +28,16 @@ namespace RolodexWinformEFC.Models
         }
     }
 
+    public class RolodexContact
+    {
+        public int RolodexContactId { get; set; }
+
+        public virtual RolodexEntry Owner { get; set; }
+
+        public string HowToContact { get; set; }
+
+    }
+
     public class RolodexEntry
     {
         // EFC only cares about the data properties
@@ -36,6 +47,9 @@ namespace RolodexWinformEFC.Models
         public string FirstNameMI { get; set; }
 
         public DateTime? BirthDate { get; set; }    // question mark makes it nullable
+
+        // navigation properties
+        public virtual List<RolodexContact> ContactInfo { get; set; }
 
         // add helper functions to interact with individual entries
         public override string ToString()

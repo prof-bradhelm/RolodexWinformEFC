@@ -31,6 +31,13 @@ namespace RolodexWinformEFC.Forms
                 dtpBirthDate.Checked = (RolodexEntry.BirthDate != null);
                 if (RolodexEntry.BirthDate.HasValue)
                     dtpBirthDate.Value = RolodexEntry.BirthDate.Value;
+                // scatter the contact info to the listbox
+                lbContactInfo.Items.Clear();
+                foreach (RolodexContact contact in RolodexEntry.ContactInfo)
+                {
+                    lbContactInfo.Items.Add(contact);
+                }
+
             }
         } // end of Scatter()
 
@@ -48,7 +55,30 @@ namespace RolodexWinformEFC.Forms
             {
                 RolodexEntry.BirthDate = null;
             }
+
+            // gather the contact info to send to main form
+            RolodexEntry.ContactInfo = new List<RolodexContact>();
+            foreach (RolodexContact contact in lbContactInfo.Items)
+            {
+                RolodexEntry.ContactInfo.Add(contact);
+            }
+
+
         } // end of Gather()
 
+        private void tsbNewContact_Click(object sender, EventArgs e)
+        {
+            // TBD: add dialog to enter/edit information
+        }
+
+        private void tsbEditContact_Click(object sender, EventArgs e)
+        {
+            // TBD: add dialog to enter/edit information
+        }
+
+        private void tsbDeleteContact_Click(object sender, EventArgs e)
+        {
+            // TBD: add dialog to enter/edit information
+        }
     }
 }

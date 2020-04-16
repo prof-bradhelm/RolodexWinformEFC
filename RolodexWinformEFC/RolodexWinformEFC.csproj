@@ -163,6 +163,12 @@
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\ContactInfoDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\ContactInfoDialog.Designer.cs">
+      <DependentUpon>ContactInfoDialog.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\RolodexEntryDialog.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -183,6 +189,9 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\ContactInfoDialog.resx">
+      <DependentUpon>ContactInfoDialog.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\RolodexEntryDialog.resx">
       <DependentUpon>RolodexEntryDialog.cs</DependentUpon>

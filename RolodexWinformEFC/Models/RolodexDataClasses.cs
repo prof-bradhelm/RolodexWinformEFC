@@ -37,6 +37,11 @@ namespace RolodexWinformEFC.Models
 
         public string HowToContact { get; set; }
 
+        public override string ToString()
+        {
+            return HowToContact;
+        }
+
     }
 
     public class RolodexEntry

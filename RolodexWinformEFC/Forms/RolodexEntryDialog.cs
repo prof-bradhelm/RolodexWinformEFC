@@ -66,10 +66,22 @@ namespace RolodexWinformEFC.Forms
 
         } // end of Gather()
 
+
+
+
+
         private void tsbNewContact_Click(object sender, EventArgs e)
         {
-            // TBD: add dialog to enter/edit information
+            ContactInfoDialog cid = new ContactInfoDialog();
+            if (cid.ShowDialog()==DialogResult.OK)
+            {
+                lbContactInfo.Items.Add(cid.ContactInfo);
+            }
+
         }
+
+
+
 
         private void tsbEditContact_Click(object sender, EventArgs e)
         {
